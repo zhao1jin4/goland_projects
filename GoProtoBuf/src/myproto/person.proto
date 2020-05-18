@@ -1,0 +1,9 @@
+syntax = "proto3";
+option go_package = ".;myproto";
+package protobuf;
+message Person {
+    repeated   int32 id = 1; //1表示字段顺序
+    //repeated(可为0次，相当go中的slice)
+    string name = 2;
+    string email = 3;
+}
