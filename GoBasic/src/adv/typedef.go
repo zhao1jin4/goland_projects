@@ -27,7 +27,7 @@ func main(){
 	fmt.Printf("type=%T,str=%s\n",str,str)
 
 
-	log(getFuncTwoAppend());
+	printLog(getFuncTwoAppend());
 }
 func getFuncTwoAppend()funcTwo{
 	myAppend:=func(a,b int )string{
@@ -35,7 +35,7 @@ func getFuncTwoAppend()funcTwo{
 	}
 	return myAppend
 }
-func log(theAppend funcTwo) {
+func printLog(theAppend funcTwo) {
 	fmt.Println(theAppend(1,2));
 }
 type funcTwo func(int,int)string //方便函数做参数和返回值来传递

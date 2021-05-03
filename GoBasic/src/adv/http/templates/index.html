@@ -1,0 +1,55 @@
+{{ define "layout" }}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>{{.Title}}</title>
+  </head>
+  <body>
+    <div data_kind="top">
+      {{ template "navbar" . }}
+      <form action="login" method="post">
+         <input type="text" name="email"/>
+         <input type="submit" value="提交"></input>
+      </form>
+      <br/>
+      current user:<div id="mySessionId"></div>
+    </div> 
+    <script type="text/javascript">
+
+      //     var exdate=new Date();
+      // exdate.setDate(exdate.getDate()-2);
+      var ca = document.cookie.split(';');
+      for(var i=0; i<ca.length; i++) 
+      {
+        var key=ca[i].split('=')[0];
+          var val = ca[i].split('=')[1];
+      //	document.cookie= key+"=; expires="+exdate ;//删Cookie 日期设置当前时间以前
+        document.querySelector("#mySessionId").innerText =  document.querySelector("#mySessionId").innerText + val
+      }
+
+
+
+        // var _session_id=document.cookie._session_id;
+        // if(_session_id){
+        //    document.querySelector("#mySessionId").innerText=_session_id;
+        // }else
+        // {
+        //   document.querySelector("#mySessionId").innerText='未登录';
+        // }
+    </script>
+
+
+<form action="upload?user_id=123" method="post" enctype="multipart/form-data">
+  type:<input type="text" name="type" />
+  uploadFile:<input type="file" name="uploadFile" /> 
+
+  <input type="submit" value="提交"></input>
+</form>
+
+
+  </body>
+</html>
+
+{{ end }}

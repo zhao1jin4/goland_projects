@@ -11,6 +11,7 @@ go get -u github.com/grpc/grpc-go 或  下载下来 放到 $GOPATH/sc 下修改�
 
 还依赖于 golang.org/x/net  就是  https://github.com/golang/net  下载master很快，再移动目录
 		golang.org/x/text  就是  https://github.com/golang/text 下载master很慢
+		golang.org/x/sys   就是  https://github.com/golang/sys
 
 		google.golang.org/genproto 就是 https://github.com/googleapis/go-genproto 有时会多次失败
 		git clone https://github.com/googleapis/go-genproto
